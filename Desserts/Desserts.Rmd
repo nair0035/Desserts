@@ -1,0 +1,25 @@
+---
+title: "Desserts (W11)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+1)upload
+```{r}
+Desserts <- read_csv("Desserts.csv")
+View(Desserts)
+```
+2)summarize
+```{r}
+summary(Desserts)
+colnames(Desserts)<-c("fav_desserts", "rating_of_dessert", "quantity")
+```
+3)
+```{r}
+library(ggplot2)
+ggplot(Desserts, aes(fav_desserts, rating_of_dessert))+geom_bar(stat="Identity", fill="pink")
+```
+
+
